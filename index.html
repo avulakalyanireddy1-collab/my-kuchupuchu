@@ -1,26 +1,192 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hey kuchupuchu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kuchupuchu 💙</title>
+
 <style>
+* { box-sizing: border-box; }
+
 body {
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   margin: 0;
   font-family: Georgia, serif;
+  color: #24415f;
+  background: #eaf4ff;
+  text-align: center;
 }
-h1 {
-  color: black;
-  font-size: 26px;
-  font-weight: normal;
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff7ff;
+  background-image: radial-gradient(#b8d5ee 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
 }
+
+.page.active { display: flex; }
+
+.book {
+  width: 100%;
+  max-width: 580px;
+  padding: 25px 18px;
+  background: #fff;
+  border: 7px double #a6c9e9;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px #799ab544;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 25px; }
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.photo {
+  width: 220px;
+  max-width: 85%;
+  height: 260px;
+  object-fit: cover;
+  border: 9px solid white;
+  outline: 2px solid #a6c9e9;
+  box-shadow: 0 5px 15px #7899b5;
+  margin: 12px;
+  transform: rotate(-2deg);
+}
+
+button {
+  background: #a8cbed;
+  color: #193b5c;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 13px 23px;
+  margin: 8px;
+  font-size: 17px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+}
+
+button:hover { background: #c9e3fa; }
+
+.big { font-size: 85px; }
 </style>
 </head>
+
 <body>
-<h1>Hey kuchupuchu 🤌🧿</h1>
+
+<section class="page active" id="p1">
+  <div class="book">
+    <h1>MY KUCHUPUCHU 💙</h1>
+    <p>A little birthday surprise made with love!</p>
+    <img class="photo" src="2.jpeg" alt="Kuchupuchu">
+    <h2>Happy Birthdayyy! 🎀</h2>
+    <button onclick="go(2)">Open your surprise 💌</button>
+  </div>
+</section>
+
+<section class="page" id="p2">
+  <div class="book">
+    <h1>Make a wish! ✨</h1>
+    <div class="big">🎂</div>
+    <p id="cakeText">Close your eyes and make a wish, Bangaram!</p>
+    <button onclick="blow()">Blow the candles 💨</button>
+    <button onclick="go(3)">Continue 💙</button>
+  </div>
+</section>
+
+<section class="page" id="p3">
+  <div class="book">
+    <h1>Yayyy! 🥳</h1>
+    <img class="photo" src="1.jpeg" alt="Birthday girl">
+    <h2>Happy Birthday, Kuchupuchu! 💗</h2>
+    <p>May your days be filled with smiles, love and beautiful memories.</p>
+    <button onclick="go(4)">Next surprise 🎁</button>
+  </div>
+</section>
+
+<section class="page" id="p4">
+  <div class="book">
+    <h1>Accept your gifts? 🎀</h1>
+    <div class="big">🎁</div>
+    <p>I have something special for you!</p>
+    <button onclick="go(5)">YES 💙</button>
+    <button onclick="sayNo()">NO 🙈</button>
+    <p id="noText"></p>
+  </div>
+</section>
+
+<section class="page" id="p5">
+  <div class="book">
+    <h1>Choose your gift! 💝</h1>
+    <p>Which surprise will you open?</p>
+    <button onclick="gift(1)">💌 Gift 1</button>
+    <button onclick="gift(2)">💐 Gift 2</button>
+    <button onclick="gift(3)">🎁 Gift 3</button>
+    <h2 id="giftText"></h2>
+    <button onclick="go(6)">Continue 💙</button>
+  </div>
+</section>
+
+<section class="page" id="p6">
+  <div class="book">
+    <h1>Our little memories 📸</h1>
+    <img class="photo" src="1.jpeg" alt="Memory one">
+    <img class="photo" src="2.jpeg" alt="Memory two">
+    <img class="photo" src="3.jpeg" alt="Memory three">
+    <p>Some people make ordinary moments special. You are one of them! 🥹</p>
+    <button onclick="go(7)">One last surprise 🌸</button>
+  </div>
+</section>
+
+<section class="page" id="p7">
+  <div class="book">
+    <h1>Flowers for you! 💐</h1>
+    <div class="big">🌷💙🌸</div>
+    <h2>Hey kuchupuchu 🤌🧿</h2>
+    <p>You deserve all the happiness in this world.</p>
+    <p>Keep smiling, keep shining and stay the same beautiful person.</p>
+    <h2>Happy Birthday, Bangaram! ❤️</h2>
+    <button onclick="go(1)">Watch again ↻</button>
+  </div>
+</section>
+
+<script>
+function go(number) {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("p" + number).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function blow() {
+  document.getElementById("cakeText").innerHTML =
+    "Wish granted! Happy Birthdayyy! 🥳💙";
+}
+
+function sayNo() {
+  document.getElementById("noText").innerHTML =
+    "Hehe! You have to accept your gifts! 😂💗";
+}
+
+function gift(number) {
+  const messages = {
+    1: "A letter filled with love, just for you! 💌",
+    2: "A beautiful bouquet of flowers! 💐",
+    3: "A box full of hugs and happiness! 🎁"
+  };
+
+  document.getElementById("giftText").innerHTML =
+    messages[number];
+}
+</script>
+
 </body>
 </html>
