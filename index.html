@@ -38,90 +38,14 @@ h1 {
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px #000;
 }
-
-h2 {
-  color: #f5dfb5;
-  font-family: Georgia, serif;
-  font-size: 23px;
-  font-weight: normal;
-  text-shadow: 2px 2px 5px #000;
-}
-
-.message {
-  color: #ffffff;
-  font-family: Georgia, serif;
-  font-size: 17px;
-  line-height: 1.6;
-  text-shadow: 2px 2px 5px #000;
-}
-
-input, button {
-  padding: 13px;
-  border-radius: 12px;
-  margin: 10px;
-  font-family: Georgia, serif;
-  font-size: 16px;
-}
-
-input {
-  border: 1px solid #e8d5b5;
-}
-
-button {
-  background: #a77b83;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#message {
-  color: #f5dfb5;
-  font-size: 15px;
-}
 </style>
 </head>
 
 <body>
 
 <div class="card">
-
-  <h1>Hey kuchupuchu 🥺</h1>
-
-  <h2>I love you ❤️😘</h2>
-
-  <div class="message">
-    <p>I miss you so much 😭</p>
-    <p>I wanted you to see how much I miss you 🤌🧿</p>
-  </div>
-
-  <p>Enter our secret password</p>
-
-  <input type="password" id="pass"
-  placeholder="Enter password">
-
-  <br>
-
-  <button onclick="unlock()">
-    UNLOCK MY SURPRISE 💕
-  </button>
-
-  <p id="message"></p>
-
+  <h1>Hey kuchupuchu 🤌🧿</h1>
 </div>
-
-<script>
-function unlock() {
-  let password = document.getElementById("pass").value;
-
-  if (password === "chinni5") {
-    document.getElementById("message").innerHTML =
-    "Yayyy! Welcome Kuchupuchu! 🥹💗";
-  } else {
-    document.getElementById("message").innerHTML =
-    "Oops! Wrong password. Try again 🙈";
-  }
-}
-</script>
 
 </body>
 </html>
