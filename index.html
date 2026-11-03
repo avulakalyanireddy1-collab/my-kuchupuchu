@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Kuchupuchu 💗</title>
+<style>
+body {
+  background: linear-gradient(135deg, #cce7ff, #fce1f2);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  color: #496b91;
+}
+.card {
+  background: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px #9bb8d5;
+}
+input, button {
+  padding: 13px;
+  border-radius: 12px;
+  border: 1px solid #b5cce5;
+  margin: 10px;
+}
+button {
+  background: #83acd5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#message { color: #e47ba9; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🔐 A Little Surprise!</h1>
+  <h2>Hey Kuchupuchu 💗</h2>
+  <p>This little world is only for you!</p>
+  <p>Enter our secret password</p>
+
+  <input type="password" id="pass"
+  placeholder="Enter password">
+
+  <br>
+  <button onclick="unlock()">UNLOCK MY SURPRISE 💕</button>
+  <p id="message"></p>
+</div>
+
+<script>
+function unlock() {
+  let password = document.getElementById("pass").value;
+  if (password === "chinni5") {
+    document.getElementById("message").innerHTML =
+    "Yayyy! Welcome Kuchupuchu! 🥹💗";
+  } else {
+    document.getElementById("message").innerHTML =
+    "Oops! Wrong password. Try again 🙈";
+  }
+}
+</script>
+</body>
+</html>
